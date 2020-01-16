@@ -1,4 +1,5 @@
 ﻿using AtiendelosDestktop.Resources.codigo;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,19 @@ namespace AtiendelosDestktop.herramientas
             return baseDatos.consulta(consulta, tipoSelect, eliminando);
         }
 
+
+
+
         public static void reportes(string nombreReporte, string tablaSetNombre, object[] objeto, string mensaje = "", bool imprimir = false, object[] parametros = null, bool espdf = false, string nombrePdf = "")
         {
             herramientas.reportes(nombreReporte, tablaSetNombre, objeto, mensaje, imprimir, parametros, espdf, nombrePdf);
         }
 
 
+        public static ReportViewer reportesParaPanel(string nombreReporte, string tablaSetNombre, object[] objeto, string mensaje = "", bool imprimir = false, object[] parametros = null, bool espdf = false, string nombrePdf = "")
+        {
+            return herramientas.reportesParaPanel(nombreReporte, tablaSetNombre, objeto, mensaje, imprimir, parametros, espdf, nombrePdf);
+        }
 
     }
 }

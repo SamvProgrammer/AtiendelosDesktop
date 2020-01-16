@@ -37,7 +37,7 @@ namespace AtiendelosDestktop
             List<Dictionary<string, object>> resultado = globales.consulta(login);
             if (resultado.Count <= 0) return;
 
-            frmMenu menu = new frmMenu();
+            frmMenu menu = new frmMenu(this.id);
             menu.Show();
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AtiendelosDestktop.forms.reportes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +12,14 @@ using System.Windows.Forms;
 
 namespace AtiendelosDestktop.forms
 {
+   
     public partial class frmMenu : Form
     {
-        public frmMenu()
+        string id_obtenido;
+        public frmMenu(string id)
         {
             InitializeComponent();
+            this.id_obtenido = id;
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -65,6 +69,9 @@ namespace AtiendelosDestktop.forms
         private void btnrptventa_Click(object sender, EventArgs e)
         {
             SubmenuReportes.Visible = false;
+
+            AbrirFormEnPanel(new Ventas(this.id_obtenido));
+
         }
 
         private void btnrptcompra_Click(object sender, EventArgs e)

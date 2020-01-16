@@ -43,7 +43,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::AtiendelosDestktop.Properties.Resources.fondo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::AtiendelosDestktop.Properties.Resources.logoresutaurante;
             this.pictureBox1.Location = new System.Drawing.Point(74, 5);
@@ -145,9 +144,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::AtiendelosDestktop.Properties.Resources.fondo;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(290, 318);
+            this.ClientSize = new System.Drawing.Size(290, 320);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox2);
