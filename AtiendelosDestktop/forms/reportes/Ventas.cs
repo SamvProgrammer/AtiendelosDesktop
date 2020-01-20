@@ -36,13 +36,25 @@ namespace AtiendelosDestktop.forms.reportes
                 string id = Convert.ToString(item["id"]);
                 comboBox1.Items.Add(nombre);
             }
-
+            comboBox1.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
    
 
+         
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+       
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             string query = $"SELECT id_folio, a1.nombre as mesa, tipo_pago, total, id_user, a2.nombre FROM historico_tickets a1 JOIN  users a2 ON a1.id_user = a2. id WHERE  (a1.fecha between '{dateTimePicker1.Text}' and '{dateTimePicker2.Text}') AND a1.cancelado = FALSE AND a1.id_sucursal = {this.id_sucursal} AND a1.id_empresa = {this.id_empresaPrincipal};";
             List<Dictionary<string, object>> resultado = globales.consulta(query);
 
@@ -52,45 +64,48 @@ namespace AtiendelosDestktop.forms.reportes
             foreach (var item in resultado)
             {
                 string folio = Convert.ToString(item["id_folio"]);
-                string nombre_mesa = Convert.ToString(item["mesa"]);
+                string mesa = Convert.ToString(item["mesa"]);
                 string tipo_pago = Convert.ToString(item["tipo_pago"]);
                 if (tipo_pago == "E") tipo_pago = "EFECTIVO";
                 if (tipo_pago == "T") tipo_pago = "TARJETA";
                 if (tipo_pago == "O") tipo_pago = "OTROS";
                 string total = Convert.ToString(item["total"]);
                 string nombre = Convert.ToString(item["nombre"]);
-                
 
-                object[] tt1 = { folio, nombre_mesa, tipo_pago, total , nombre};
+
+                object[] tt1 = { folio, nombre, mesa, tipo_pago, total };
 
                 aux1[contador1] = tt1;
                 contador1++;
             }
 
             object[] parametros = { "sucursal" };
-            object[] valor = { "" };
+            object[] valor = { comboBox1.Text };
             object[][] enviarParametros = new object[2][];
 
             enviarParametros[0] = parametros;
             enviarParametros[1] = valor;
 
 
-            ReportViewer reporte = globales.reportesParaPanel("reporte_venta", "ventas", aux1, "", false, enviarParametros);
-            reporte.Dock = DockStyle.Fill;
-            this.panelreporte.Controls.Clear();
-            this.panelreporte.Controls.Add(reporte);
-            this.Cursor = Cursors.Default;
 
+
+
+            ReportViewer reporte = globales.reportesParaPanel("ventas", "ventas", aux1, "", false, enviarParametros);
+            reporte.Dock = DockStyle.Fill;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(reporte);
+
+
+            this.Cursor = Cursors.Default;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
             foreach (var item in this.lista)
             {
                 string nombre = Convert.ToString(item["nombre"]);
 
-                if (nombre== comboBox1.Text)
+                if (nombre == comboBox1.Text)
                 {
                     this.id_sucursal = Convert.ToString(item["id"]);
                     continue;

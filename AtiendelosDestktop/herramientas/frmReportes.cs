@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,75 +11,72 @@ using System.Windows.Forms;
 
 namespace AtiendelosDestktop.herramientas
 {
-    public partial class frmReporte : Form
+    public partial class frmReportes : Form
     {
-        private bool cargando;
         private bool imprimir;
-        private bool pdf;
         private string mensaje;
-        private string nombrePdf;
-        public frmReporte(string nombreReporte, string tablaDataSet)
+
+        public frmReportes(string nombreReporte,string nombreTabla)
         {
             InitializeComponent();
+
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.p_quirogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tablas = new AtiendelosDestktop.reportes.tablas();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-
-
-            ((System.ComponentModel.ISupportInitialize)(this.p_quirogBindingSource)).BeginInit();
+            this.tablas = new AtiendelosDestktop.reportes.tablas();
+            this.ventasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tablas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventasBindingSource)).BeginInit();
             this.SuspendLayout();
-            this.p_quirogBindingSource.DataMember = tablaDataSet;
-            this.p_quirogBindingSource.DataSource = this.tablas;
-            this.tablas.DataSetName = "tablas";
-            this.tablas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.p_quirogBindingSource;
+            reportDataSource1.Value = this.ventasBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = string.Format("AtiendelosDestktop.reportes{0}.rdlc", nombreReporte);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = $"AtiendelosDestktop.reportes.{nombreReporte}.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(768, 499); 
+            this.reportViewer1.Size = new System.Drawing.Size(559, 387);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // tablas
+            // 
+            this.tablas.DataSetName = "tablas";
+            this.tablas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ventasBindingSource
+            // 
+            this.ventasBindingSource.DataMember = nombreTabla;
+            this.ventasBindingSource.DataSource = this.tablas;
+            // 
+            // frmReportes
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font; 
-            this.ClientSize = new System.Drawing.Size(768, 499);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(559, 387);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmReporte";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frmReporte_Load);
-
+            this.Name = "frmReportes";
+            this.Text = "frmReportes";
+            this.Load += new System.EventHandler(this.frmReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventasBindingSource)).EndInit();
             this.ResumeLayout(false);
-            WindowState = FormWindowState.Maximized;
-            this.Text = "Reporte";
-            this.ShowInTaskbar = false;
         }
 
-      
-        private void reportViewer1_Load(object sender, EventArgs e)
+        private void frmReportes_Load(object sender, EventArgs e)
         {
 
+            this.reportViewer1.RefreshReport();
         }
 
-        private void frmReporte_Load(object sender, EventArgs e)
-        {
-
-
-
-
-
-        }
 
 
         internal void cargarDatos(string tablaNombre, object[] objeto, string mensaje, bool imprimir = false, object[] parametros = null)
         {
 
-            DataTable tabla = tablas.Tables[tablaNombre];
+            DataTable tabla = tablas.Tables[0];
 
             this.mensaje = mensaje;
 
@@ -107,13 +103,8 @@ namespace AtiendelosDestktop.herramientas
             this.reportViewer1.RefreshReport();
             this.imprimir = imprimir;
         }
-        public void setParametrosExtra(bool pdf, string nombre)
-        {
-            this.pdf = pdf;
-            this.nombrePdf = nombre;
-        }
 
-        private void frmReporte_Load_1(object sender, EventArgs e)
+        private void frmReportes_Load_1(object sender, EventArgs e)
         {
 
         }

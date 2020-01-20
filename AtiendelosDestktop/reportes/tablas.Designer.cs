@@ -281,13 +281,13 @@ namespace AtiendelosDestktop.reportes {
             
             private global::System.Data.DataColumn columnfolio;
             
-            private global::System.Data.DataColumn columnnombre_mesa;
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnmesa;
             
             private global::System.Data.DataColumn columntipo_pago;
             
             private global::System.Data.DataColumn columntotal;
-            
-            private global::System.Data.DataColumn columnnombre;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -332,9 +332,17 @@ namespace AtiendelosDestktop.reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombre_mesaColumn {
+            public global::System.Data.DataColumn nombreColumn {
                 get {
-                    return this.columnnombre_mesa;
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn mesaColumn {
+                get {
+                    return this.columnmesa;
                 }
             }
             
@@ -351,14 +359,6 @@ namespace AtiendelosDestktop.reportes {
             public global::System.Data.DataColumn totalColumn {
                 get {
                     return this.columntotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombreColumn {
-                get {
-                    return this.columnnombre;
                 }
             }
             
@@ -399,14 +399,14 @@ namespace AtiendelosDestktop.reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ventasRow AddventasRow(string folio, string nombre_mesa, string tipo_pago, string total, string nombre) {
+            public ventasRow AddventasRow(string folio, string nombre, string mesa, string tipo_pago, string total) {
                 ventasRow rowventasRow = ((ventasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         folio,
-                        nombre_mesa,
+                        nombre,
+                        mesa,
                         tipo_pago,
-                        total,
-                        nombre};
+                        total};
                 rowventasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowventasRow);
                 return rowventasRow;
@@ -430,10 +430,10 @@ namespace AtiendelosDestktop.reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnfolio = base.Columns["folio"];
-                this.columnnombre_mesa = base.Columns["nombre_mesa"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnmesa = base.Columns["mesa"];
                 this.columntipo_pago = base.Columns["tipo_pago"];
                 this.columntotal = base.Columns["total"];
-                this.columnnombre = base.Columns["nombre"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -441,14 +441,14 @@ namespace AtiendelosDestktop.reportes {
             private void InitClass() {
                 this.columnfolio = new global::System.Data.DataColumn("folio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfolio);
-                this.columnnombre_mesa = new global::System.Data.DataColumn("nombre_mesa", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre_mesa);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnmesa = new global::System.Data.DataColumn("mesa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmesa);
                 this.columntipo_pago = new global::System.Data.DataColumn("tipo_pago", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipo_pago);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -607,17 +607,33 @@ namespace AtiendelosDestktop.reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre_mesa {
+            public string nombre {
                 get {
                     try {
-                        return ((string)(this[this.tableventas.nombre_mesaColumn]));
+                        return ((string)(this[this.tableventas.nombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nombre_mesa\' in table \'ventas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombre\' in table \'ventas\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableventas.nombre_mesaColumn] = value;
+                    this[this.tableventas.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string mesa {
+                get {
+                    try {
+                        return ((string)(this[this.tableventas.mesaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mesa\' in table \'ventas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableventas.mesaColumn] = value;
                 }
             }
             
@@ -655,22 +671,6 @@ namespace AtiendelosDestktop.reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre {
-                get {
-                    try {
-                        return ((string)(this[this.tableventas.nombreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nombre\' in table \'ventas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableventas.nombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfolioNull() {
                 return this.IsNull(this.tableventas.folioColumn);
             }
@@ -683,14 +683,26 @@ namespace AtiendelosDestktop.reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isnombre_mesaNull() {
-                return this.IsNull(this.tableventas.nombre_mesaColumn);
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableventas.nombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setnombre_mesaNull() {
-                this[this.tableventas.nombre_mesaColumn] = global::System.Convert.DBNull;
+            public void SetnombreNull() {
+                this[this.tableventas.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmesaNull() {
+                return this.IsNull(this.tableventas.mesaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmesaNull() {
+                this[this.tableventas.mesaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -715,18 +727,6 @@ namespace AtiendelosDestktop.reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettotalNull() {
                 this[this.tableventas.totalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnombreNull() {
-                return this.IsNull(this.tableventas.nombreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnombreNull() {
-                this[this.tableventas.nombreColumn] = global::System.Convert.DBNull;
             }
         }
         

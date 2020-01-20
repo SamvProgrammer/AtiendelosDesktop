@@ -1,6 +1,6 @@
 ﻿namespace AtiendelosDestktop.herramientas
 {
-    partial class frmReporte
+    partial class frmReportes
     {
         /// <summary>
         /// Required designer variable.
@@ -17,7 +17,6 @@
             {
                 components.Dispose();
             }
-
             base.Dispose(disposing);
         }
 
@@ -31,13 +30,11 @@
         {
             this.SuspendLayout();
             // 
-            // frmReporte
+            // frmReportes
             // 
-            this.ClientSize = new System.Drawing.Size(622, 549);
-            this.Name = "frmReporte";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmReporte_Load_1);
+            this.ClientSize = new System.Drawing.Size(354, 261);
+            this.Name = "frmReportes";
+            this.Load += new System.EventHandler(this.frmReportes_Load_1);
             this.ResumeLayout(false);
 
         }
@@ -45,7 +42,7 @@
         #endregion
 
         internal Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource p_quirogBindingSource;
+        private System.Windows.Forms.BindingSource ventasBindingSource;
         private reportes.tablas tablas;
     }
 }

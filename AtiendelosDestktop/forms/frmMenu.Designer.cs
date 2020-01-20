@@ -428,6 +428,9 @@
             // 
             // btninicio
             // 
+            this.btninicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btninicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btninicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btninicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btninicio.Image = global::AtiendelosDestktop.Properties.Resources.logoresutaurante;
             this.btninicio.Location = new System.Drawing.Point(0, 0);
@@ -459,6 +462,7 @@
             this.Name = "frmMenu";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.frmMenu_Shown);
             this.BarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();

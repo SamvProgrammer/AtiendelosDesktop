@@ -12,21 +12,20 @@ namespace AtiendelosDestktop.herramientas
     {
         internal static void reportes(string nombreReporte, string tablaDataSet, object[] objeto, string mensaje, bool imprimir = false, object[] parametros = null, bool esPdf = false, string nombreArchivo = "")
         {
-            frmReporte reporte = new frmReporte(nombreReporte, tablaDataSet);
+            frmReportes reporte = new frmReportes(nombreReporte, tablaDataSet);
 
 
-            reporte.setParametrosExtra(esPdf, nombreArchivo);
+            
             reporte.cargarDatos(tablaDataSet, objeto, mensaje, imprimir, parametros);
             reporte.ShowDialog();
         }
 
-
         internal static ReportViewer reportesParaPanel(string nombreReporte, string tablaDataSet, object[] objeto, string mensaje, bool imprimir = false, object[] parametros = null, bool esPdf = false, string nombreArchivo = "")
         {
-            frmReporte reporte = new frmReporte(nombreReporte, tablaDataSet);
+            frmReportes reporte = new frmReportes(nombreReporte, tablaDataSet);
 
 
-            reporte.setParametrosExtra(esPdf, nombreArchivo);
+            
             reporte.cargarDatos(tablaDataSet, objeto, mensaje, imprimir, parametros);
             return reporte.reportViewer1;
         }

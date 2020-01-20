@@ -16,6 +16,9 @@ namespace AtiendelosDestktop.herramientas
         internal static bool esReporte;
         internal static bool sinPagos;
         internal static bool leftButton = false;
+        internal static string usuario;
+        internal static string password;
+        internal static int id_sucursal;
 
         public static dynamic consulta(string consulta, bool tipoSelect = false, bool eliminando = false)
         {
@@ -24,17 +27,18 @@ namespace AtiendelosDestktop.herramientas
 
 
 
-
         public static void reportes(string nombreReporte, string tablaSetNombre, object[] objeto, string mensaje = "", bool imprimir = false, object[] parametros = null, bool espdf = false, string nombrePdf = "")
         {
             herramientas.reportes(nombreReporte, tablaSetNombre, objeto, mensaje, imprimir, parametros, espdf, nombrePdf);
         }
 
-
         public static ReportViewer reportesParaPanel(string nombreReporte, string tablaSetNombre, object[] objeto, string mensaje = "", bool imprimir = false, object[] parametros = null, bool espdf = false, string nombrePdf = "")
         {
             return herramientas.reportesParaPanel(nombreReporte, tablaSetNombre, objeto, mensaje, imprimir, parametros, espdf, nombrePdf);
         }
+
+
+
 
     }
 }

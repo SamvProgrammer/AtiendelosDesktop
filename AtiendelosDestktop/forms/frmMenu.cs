@@ -111,5 +111,9 @@ namespace AtiendelosDestktop.forms
            // AbrirFormEnPanel(new inicio());
         }
 
+        private void frmMenu_Shown(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmPortada());
+        }
     }
 }
