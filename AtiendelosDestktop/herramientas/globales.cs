@@ -19,6 +19,7 @@ namespace AtiendelosDestktop.herramientas
         internal static string usuario;
         internal static string password;
         internal static int id_sucursal;
+        internal static bool acceso;
 
         public static dynamic consulta(string consulta, bool tipoSelect = false, bool eliminando = false)
         {

@@ -1,4 +1,5 @@
 ﻿using AtiendelosDestktop.forms.reportes;
+using AtiendelosDestktop.herramientas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace AtiendelosDestktop.forms
     public partial class frmMenu : Form
     {
         string id_obtenido;
+        bool bandera =true;
         public frmMenu(string id)
         {
             InitializeComponent();
@@ -82,6 +84,8 @@ namespace AtiendelosDestktop.forms
         private void btnrptpagos_Click(object sender, EventArgs e)
         {
             SubmenuReportes.Visible = false;
+            AbrirFormEnPanel(new frmGastos(this.id_obtenido));
+
         }
 
         private void btnsalir_Click(object sender, EventArgs e)
@@ -114,6 +118,14 @@ namespace AtiendelosDestktop.forms
         private void frmMenu_Shown(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new frmPortada());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            globales.acceso = bandera;
+            login inicio = new login();
+            inicio.Show();
+            this.Close();
         }
     }
 }

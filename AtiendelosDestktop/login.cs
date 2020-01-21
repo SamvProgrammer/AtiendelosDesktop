@@ -16,9 +16,12 @@ namespace AtiendelosDestktop
     public partial class login : Form
     {
         string id;
+        bool cierra;
+
         public login()
         {
             InitializeComponent();
+
         }
 
         private void login_Load(object sender, EventArgs e)
@@ -73,6 +76,8 @@ namespace AtiendelosDestktop
 
         private void login_Shown(object sender, EventArgs e)
         {
+
+            if (globales.acceso == true) return;
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"/credenciales.txt";
             if (File.Exists(ruta))
             {

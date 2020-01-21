@@ -34,7 +34,7 @@ namespace AtiendelosDestktop
 
             if (baseDatos.realizarConexion(queryConexion))
             {
-                Application.Run(new login());///
+                Application.Run(new login( ));///
             }
         }
     }

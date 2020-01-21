@@ -76,7 +76,7 @@ namespace AtiendelosDestktop.herramientas
         internal void cargarDatos(string tablaNombre, object[] objeto, string mensaje, bool imprimir = false, object[] parametros = null)
         {
 
-            DataTable tabla = tablas.Tables[0];
+            DataTable tabla = tablas.Tables[tablaNombre];
 
             this.mensaje = mensaje;
 
