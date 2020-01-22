@@ -78,8 +78,8 @@ namespace AtiendelosDestktop.forms.reportes
                 contador1++;
             }
 
-            object[] parametros = { "sucursal" };
-            object[] valor = { comboBox1.Text };
+            object[] parametros = { "sucursal", "titulo" };
+            object[] valor = { comboBox1.Text , "Periodo: "+dateTimePicker1.Text+" al " + dateTimePicker2.Text};
             object[][] enviarParametros = new object[2][];
 
             enviarParametros[0] = parametros;

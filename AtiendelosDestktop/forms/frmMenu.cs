@@ -65,10 +65,13 @@ namespace AtiendelosDestktop.forms
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
+            
             SubmenuReportes.Visible = true;
+            this.MenuVertical.Size = new System.Drawing.Size(304, 612);
+
         }
 
-        private void btnrptventa_Click(object sender, EventArgs e)
+        private void btnrptventa_Click_1(object sender, EventArgs e)
         {
             SubmenuReportes.Visible = false;
 
@@ -81,7 +84,7 @@ namespace AtiendelosDestktop.forms
             SubmenuReportes.Visible = false;
         }
 
-        private void btnrptpagos_Click(object sender, EventArgs e)
+        private void btnrptpagos_Click_1(object sender, EventArgs e)
         {
             SubmenuReportes.Visible = false;
             AbrirFormEnPanel(new frmGastos(this.id_obtenido));
@@ -102,6 +105,8 @@ namespace AtiendelosDestktop.forms
             this.panelContenedor.Controls.Add(fh);
             this.panelContenedor.Tag = fh;
             fh.Show();
+            this.MenuVertical.Size = new System.Drawing.Size(217, 612);
+
 
         }
 
@@ -126,6 +131,18 @@ namespace AtiendelosDestktop.forms
             login inicio = new login();
             inicio.Show();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SubmenuReportes.Visible = false;
+            AbrirFormEnPanel(new frmCorteInventario(this.id_obtenido));
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            SubmenuReportes.Visible = false;
+            AbrirFormEnPanel(new frmCorteInventario(this.id_obtenido));
         }
     }
 }

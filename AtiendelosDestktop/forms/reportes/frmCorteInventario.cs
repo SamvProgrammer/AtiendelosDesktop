@@ -12,19 +12,22 @@ using System.Windows.Forms;
 
 namespace AtiendelosDestktop.forms.reportes
 {
-    public partial class frmGastos : Form
+
+
+    public partial class frmCorteInventario : Form
     {
+
 
         string id_empresaPrincipal;
         List<Dictionary<string, object>> lista;
         string id_sucursal;
 
-        public frmGastos(string id_empresa)
+        public frmCorteInventario(string id_empresa)
         {
             InitializeComponent();
             this.id_empresaPrincipal = id_empresa;
-
         }
+
         private void Ventas_Load(object sender, EventArgs e)
         {
             string query = $"SELECT nombre,id FROM sucursales WHERE id_empresa={this.id_empresaPrincipal}";
@@ -54,7 +57,7 @@ namespace AtiendelosDestktop.forms.reportes
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string query = $"select a1.nombre as gasto, a1.total ,a1.id_cortecaja as folio,a3.login  from gastos a1 join corte_caja a2 ON a1.id_cortecaja =a2.id  join users a3 ON a1.id_usuario=a3.id where (a1.id_sucursal= {this.id_sucursal} and a1.id_empresa= {this.id_empresaPrincipal})and  a2.fecha between '{dateTimePicker1.Text}' and '{dateTimePicker2.Text}' order by a1.id_cortecaja";
+            string query = "";
             List<Dictionary<string, object>> resultado = globales.consulta(query);
 
             object[] aux1 = new object[resultado.Count];
@@ -62,20 +65,24 @@ namespace AtiendelosDestktop.forms.reportes
 
             foreach (var item in resultado)
             {
-                string gasto = Convert.ToString(item["gasto"]);
+                string folio = Convert.ToString(item["id_folio"]);
+                string mesa = Convert.ToString(item["mesa"]);
+                string tipo_pago = Convert.ToString(item["tipo_pago"]);
+                if (tipo_pago == "E") tipo_pago = "EFECTIVO";
+                if (tipo_pago == "T") tipo_pago = "TARJETA";
+                if (tipo_pago == "O") tipo_pago = "OTROS";
                 string total = Convert.ToString(item["total"]);
-                string folio = Convert.ToString(item["folio"]);
-                string login = Convert.ToString(item["login"]);
+                string nombre = Convert.ToString(item["nombre"]);
 
 
-                object[] tt1 = { folio, total, folio, login };
+                object[] tt1 = { folio, nombre, mesa, tipo_pago, total };
 
                 aux1[contador1] = tt1;
                 contador1++;
             }
 
-            object[] parametros = { "sucursal", "titulo" };
-            object[] valor = { comboBox1.Text , "Periodo: "+dateTimePicker1.Text +" al "+ dateTimePicker2.Text };
+            object[] parametros = { "sucursal" };
+            object[] valor = { comboBox1.Text};
             object[][] enviarParametros = new object[2][];
 
             enviarParametros[0] = parametros;
@@ -85,7 +92,7 @@ namespace AtiendelosDestktop.forms.reportes
 
 
 
-            ReportViewer reporte = globales.reportesParaPanel("reporte_gastos", "gastos", aux1, "", false, enviarParametros);
+            ReportViewer reporte = globales.reportesParaPanel("ventas", "ventas", aux1, "", false, enviarParametros);
             reporte.Dock = DockStyle.Fill;
             this.panel2.Controls.Clear();
             this.panel2.Controls.Add(reporte);
