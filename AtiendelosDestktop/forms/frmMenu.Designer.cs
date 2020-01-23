@@ -35,6 +35,15 @@
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.SubmenuReportes = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnrptpagos = new System.Windows.Forms.Button();
+            this.btnrptcompra = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnrptventa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -51,23 +60,14 @@
             this.btnproductos = new System.Windows.Forms.Button();
             this.btninicio = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.SubmenuReportes = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.btnrptpagos = new System.Windows.Forms.Button();
-            this.btnrptcompra = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.btnrptventa = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.MenuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btninicio)).BeginInit();
             this.SubmenuReportes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btninicio)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraTitulo
@@ -179,6 +179,121 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(217, 612);
             this.MenuVertical.TabIndex = 1;
+            // 
+            // SubmenuReportes
+            // 
+            this.SubmenuReportes.Controls.Add(this.panel8);
+            this.SubmenuReportes.Controls.Add(this.button2);
+            this.SubmenuReportes.Controls.Add(this.panel11);
+            this.SubmenuReportes.Controls.Add(this.panel10);
+            this.SubmenuReportes.Controls.Add(this.btnrptpagos);
+            this.SubmenuReportes.Controls.Add(this.btnrptcompra);
+            this.SubmenuReportes.Controls.Add(this.panel9);
+            this.SubmenuReportes.Controls.Add(this.btnrptventa);
+            this.SubmenuReportes.Location = new System.Drawing.Point(149, 410);
+            this.SubmenuReportes.Name = "SubmenuReportes";
+            this.SubmenuReportes.Size = new System.Drawing.Size(179, 134);
+            this.SubmenuReportes.TabIndex = 17;
+            this.SubmenuReportes.Visible = false;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(0, 102);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 28);
+            this.panel8.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(3, 102);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(176, 28);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Corte Inventario";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(0, 68);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 28);
+            this.panel11.TabIndex = 19;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel10.Location = new System.Drawing.Point(0, 34);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 28);
+            this.panel10.TabIndex = 19;
+            // 
+            // btnrptpagos
+            // 
+            this.btnrptpagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnrptpagos.FlatAppearance.BorderSize = 0;
+            this.btnrptpagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnrptpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrptpagos.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrptpagos.ForeColor = System.Drawing.Color.White;
+            this.btnrptpagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrptpagos.Location = new System.Drawing.Point(3, 68);
+            this.btnrptpagos.Name = "btnrptpagos";
+            this.btnrptpagos.Size = new System.Drawing.Size(176, 28);
+            this.btnrptpagos.TabIndex = 18;
+            this.btnrptpagos.Text = "Reporte Pagos";
+            this.btnrptpagos.UseVisualStyleBackColor = false;
+            this.btnrptpagos.Click += new System.EventHandler(this.btnrptpagos_Click_1);
+            // 
+            // btnrptcompra
+            // 
+            this.btnrptcompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnrptcompra.FlatAppearance.BorderSize = 0;
+            this.btnrptcompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnrptcompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrptcompra.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrptcompra.ForeColor = System.Drawing.Color.White;
+            this.btnrptcompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrptcompra.Location = new System.Drawing.Point(3, 34);
+            this.btnrptcompra.Name = "btnrptcompra";
+            this.btnrptcompra.Size = new System.Drawing.Size(176, 28);
+            this.btnrptcompra.TabIndex = 18;
+            this.btnrptcompra.Text = "Reporte Compras";
+            this.btnrptcompra.UseVisualStyleBackColor = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(5, 28);
+            this.panel9.TabIndex = 17;
+            // 
+            // btnrptventa
+            // 
+            this.btnrptventa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnrptventa.FlatAppearance.BorderSize = 0;
+            this.btnrptventa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnrptventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrptventa.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrptventa.ForeColor = System.Drawing.Color.White;
+            this.btnrptventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrptventa.Location = new System.Drawing.Point(3, 0);
+            this.btnrptventa.Name = "btnrptventa";
+            this.btnrptventa.Size = new System.Drawing.Size(176, 28);
+            this.btnrptventa.TabIndex = 16;
+            this.btnrptventa.Text = "Reporte Ventas";
+            this.btnrptventa.UseVisualStyleBackColor = false;
+            this.btnrptventa.Click += new System.EventHandler(this.btnrptventa_Click_1);
             // 
             // panel2
             // 
@@ -382,121 +497,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1083, 612);
             this.panelContenedor.TabIndex = 2;
             // 
-            // SubmenuReportes
-            // 
-            this.SubmenuReportes.Controls.Add(this.panel8);
-            this.SubmenuReportes.Controls.Add(this.button2);
-            this.SubmenuReportes.Controls.Add(this.panel11);
-            this.SubmenuReportes.Controls.Add(this.panel10);
-            this.SubmenuReportes.Controls.Add(this.btnrptpagos);
-            this.SubmenuReportes.Controls.Add(this.btnrptcompra);
-            this.SubmenuReportes.Controls.Add(this.panel9);
-            this.SubmenuReportes.Controls.Add(this.btnrptventa);
-            this.SubmenuReportes.Location = new System.Drawing.Point(149, 410);
-            this.SubmenuReportes.Name = "SubmenuReportes";
-            this.SubmenuReportes.Size = new System.Drawing.Size(179, 134);
-            this.SubmenuReportes.TabIndex = 17;
-            this.SubmenuReportes.Visible = false;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel8.Location = new System.Drawing.Point(0, 102);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(5, 28);
-            this.panel8.TabIndex = 21;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 28);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Corte Inventario";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel11.Location = new System.Drawing.Point(0, 68);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 28);
-            this.panel11.TabIndex = 19;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel10.Location = new System.Drawing.Point(0, 34);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 28);
-            this.panel10.TabIndex = 19;
-            // 
-            // btnrptpagos
-            // 
-            this.btnrptpagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnrptpagos.FlatAppearance.BorderSize = 0;
-            this.btnrptpagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnrptpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrptpagos.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrptpagos.ForeColor = System.Drawing.Color.White;
-            this.btnrptpagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrptpagos.Location = new System.Drawing.Point(3, 68);
-            this.btnrptpagos.Name = "btnrptpagos";
-            this.btnrptpagos.Size = new System.Drawing.Size(176, 28);
-            this.btnrptpagos.TabIndex = 18;
-            this.btnrptpagos.Text = "Reporte Pagos";
-            this.btnrptpagos.UseVisualStyleBackColor = false;
-            this.btnrptpagos.Click += new System.EventHandler(this.btnrptpagos_Click_1);
-            // 
-            // btnrptcompra
-            // 
-            this.btnrptcompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnrptcompra.FlatAppearance.BorderSize = 0;
-            this.btnrptcompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnrptcompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrptcompra.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrptcompra.ForeColor = System.Drawing.Color.White;
-            this.btnrptcompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrptcompra.Location = new System.Drawing.Point(3, 34);
-            this.btnrptcompra.Name = "btnrptcompra";
-            this.btnrptcompra.Size = new System.Drawing.Size(176, 28);
-            this.btnrptcompra.TabIndex = 18;
-            this.btnrptcompra.Text = "Reporte Compras";
-            this.btnrptcompra.UseVisualStyleBackColor = false;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 28);
-            this.panel9.TabIndex = 17;
-            // 
-            // btnrptventa
-            // 
-            this.btnrptventa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnrptventa.FlatAppearance.BorderSize = 0;
-            this.btnrptventa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnrptventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrptventa.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrptventa.ForeColor = System.Drawing.Color.White;
-            this.btnrptventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrptventa.Location = new System.Drawing.Point(3, 0);
-            this.btnrptventa.Name = "btnrptventa";
-            this.btnrptventa.Size = new System.Drawing.Size(176, 28);
-            this.btnrptventa.TabIndex = 16;
-            this.btnrptventa.Text = "Reporte Ventas";
-            this.btnrptventa.UseVisualStyleBackColor = false;
-            this.btnrptventa.Click += new System.EventHandler(this.btnrptventa_Click_1);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,8 +516,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.MenuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btninicio)).EndInit();
             this.SubmenuReportes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btninicio)).EndInit();
             this.ResumeLayout(false);
 
         }

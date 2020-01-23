@@ -54,7 +54,35 @@ namespace AtiendelosDestktop.forms.reportes
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string query = $"SELECT id_folio, a1.nombre as mesa, tipo_pago, total, id_user, a2.nombre FROM historico_tickets a1 JOIN  users a2 ON a1.id_user = a2. id WHERE  (a1.fecha between '{dateTimePicker1.Text}' and '{dateTimePicker2.Text}') AND a1.cancelado = FALSE AND a1.id_sucursal = {this.id_sucursal} AND a1.id_empresa = {this.id_empresaPrincipal};";
+   
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            foreach (var item in this.lista)
+            {
+                string nombre = Convert.ToString(item["nombre"]);
+
+                if (nombre == comboBox1.Text)
+                {
+                    this.id_sucursal = Convert.ToString(item["id"]);
+                    continue;
+
+                }
+            }
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            
+            DateTime f1 = Convert.ToDateTime(fecha1.Value);
+            DateTime f2 = Convert.ToDateTime(fecha2.Value);
+
+            string fecha1r = String.Format("{0:yyyy-MM-dd}", f1);
+            string fecha2r = String.Format("{0:yyyy-MM-dd}", f2);
+
+
+            string query = $"SELECT id_folio, a1.nombre as mesa, tipo_pago, total, id_user, a2.nombre FROM historico_tickets a1 JOIN  users a2 ON a1.id_user = a2. id WHERE  (a1.fecha between '{fecha1r}' and '{fecha2r}') AND a1.cancelado = FALSE AND a1.id_sucursal = {this.id_sucursal} AND a1.id_empresa = {this.id_empresaPrincipal};";
             List<Dictionary<string, object>> resultado = globales.consulta(query);
 
             object[] aux1 = new object[resultado.Count];
@@ -79,7 +107,7 @@ namespace AtiendelosDestktop.forms.reportes
             }
 
             object[] parametros = { "sucursal", "titulo" };
-            object[] valor = { comboBox1.Text , "Periodo: "+dateTimePicker1.Text+" al " + dateTimePicker2.Text};
+            object[] valor = { comboBox1.Text, "Periodo: " + fecha1.Text + " al " + fecha2.Text };
             object[][] enviarParametros = new object[2][];
 
             enviarParametros[0] = parametros;
@@ -96,21 +124,6 @@ namespace AtiendelosDestktop.forms.reportes
 
 
             this.Cursor = Cursors.Default;
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            foreach (var item in this.lista)
-            {
-                string nombre = Convert.ToString(item["nombre"]);
-
-                if (nombre == comboBox1.Text)
-                {
-                    this.id_sucursal = Convert.ToString(item["id"]);
-                    continue;
-
-                }
-            }
         }
     }
 }

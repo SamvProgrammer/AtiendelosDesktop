@@ -65,9 +65,10 @@ namespace AtiendelosDestktop.forms
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            
+
             SubmenuReportes.Visible = true;
             this.MenuVertical.Size = new System.Drawing.Size(304, 612);
+            this.btninicio.Size = new System.Drawing.Size(304, 102);
 
         }
 
@@ -106,7 +107,7 @@ namespace AtiendelosDestktop.forms
             this.panelContenedor.Tag = fh;
             fh.Show();
             this.MenuVertical.Size = new System.Drawing.Size(217, 612);
-
+            this.btninicio.Size = new System.Drawing.Size(220, 102);
 
         }
 

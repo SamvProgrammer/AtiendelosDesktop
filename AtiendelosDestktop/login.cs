@@ -96,6 +96,7 @@ namespace AtiendelosDestktop
                     txtPasword.Text = pass;
                     this.id = id_sucursal;
                     pictureBox2_Click(null, null);
+                    this.Hide();
                 }
                 catch { }
             }
