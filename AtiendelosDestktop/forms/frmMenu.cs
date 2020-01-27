@@ -113,7 +113,9 @@ namespace AtiendelosDestktop.forms
 
         private void btnproductos_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmProductos());
+            SubMenuProductos.Visible = true;
+            this.MenuVertical.Size = new System.Drawing.Size(304, 612);
+            this.btninicio.Size = new System.Drawing.Size(304, 102);
         }
 
         private void btninicio_Click(object sender, EventArgs e)
@@ -145,5 +147,29 @@ namespace AtiendelosDestktop.forms
             SubmenuReportes.Visible = false;
             AbrirFormEnPanel(new frmCorteInventario(this.id_obtenido));
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SubMenuProductos.Visible = false;
+            AbrirFormEnPanel(new frmCategorias(this.id_obtenido));
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SubMenuProductos.Visible = false;
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            SubMenuProductos.Visible = false;
+                
+        }
+
+        private void btnrptcompra_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
+    
 }
