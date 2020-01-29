@@ -35,6 +35,13 @@
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.SubMenuProductos = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.btnCategoriaProd = new System.Windows.Forms.Button();
             this.SubmenuReportes = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -60,22 +67,15 @@
             this.btnproductos = new System.Windows.Forms.Button();
             this.btninicio = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.SubMenuProductos = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.btnCategoriaProd = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.MenuVertical.SuspendLayout();
+            this.SubMenuProductos.SuspendLayout();
             this.SubmenuReportes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btninicio)).BeginInit();
-            this.SubMenuProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // BarraTitulo
@@ -188,6 +188,95 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(217, 612);
             this.MenuVertical.TabIndex = 1;
+            // 
+            // SubMenuProductos
+            // 
+            this.SubMenuProductos.Controls.Add(this.panel14);
+            this.SubMenuProductos.Controls.Add(this.panel15);
+            this.SubMenuProductos.Controls.Add(this.button8);
+            this.SubMenuProductos.Controls.Add(this.button9);
+            this.SubMenuProductos.Controls.Add(this.panel16);
+            this.SubMenuProductos.Controls.Add(this.btnCategoriaProd);
+            this.SubMenuProductos.Location = new System.Drawing.Point(152, 134);
+            this.SubMenuProductos.Name = "SubMenuProductos";
+            this.SubMenuProductos.Size = new System.Drawing.Size(179, 101);
+            this.SubMenuProductos.TabIndex = 18;
+            this.SubMenuProductos.Visible = false;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel14.Location = new System.Drawing.Point(0, 68);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(5, 28);
+            this.panel14.TabIndex = 19;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel15.Location = new System.Drawing.Point(0, 34);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(5, 28);
+            this.panel15.TabIndex = 19;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(3, 68);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(176, 28);
+            this.button8.TabIndex = 18;
+            this.button8.Text = "Promociones / Combos";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(3, 34);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(176, 28);
+            this.button9.TabIndex = 18;
+            this.button9.Text = "Alta Productos";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(5, 28);
+            this.panel16.TabIndex = 17;
+            // 
+            // btnCategoriaProd
+            // 
+            this.btnCategoriaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnCategoriaProd.FlatAppearance.BorderSize = 0;
+            this.btnCategoriaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCategoriaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoriaProd.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoriaProd.ForeColor = System.Drawing.Color.White;
+            this.btnCategoriaProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategoriaProd.Location = new System.Drawing.Point(3, 0);
+            this.btnCategoriaProd.Name = "btnCategoriaProd";
+            this.btnCategoriaProd.Size = new System.Drawing.Size(176, 28);
+            this.btnCategoriaProd.TabIndex = 16;
+            this.btnCategoriaProd.Text = "Categorias";
+            this.btnCategoriaProd.UseVisualStyleBackColor = false;
+            this.btnCategoriaProd.Click += new System.EventHandler(this.button10_Click);
             // 
             // SubmenuReportes
             // 
@@ -507,95 +596,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1083, 612);
             this.panelContenedor.TabIndex = 2;
             // 
-            // SubMenuProductos
-            // 
-            this.SubMenuProductos.Controls.Add(this.panel14);
-            this.SubMenuProductos.Controls.Add(this.panel15);
-            this.SubMenuProductos.Controls.Add(this.button8);
-            this.SubMenuProductos.Controls.Add(this.button9);
-            this.SubMenuProductos.Controls.Add(this.panel16);
-            this.SubMenuProductos.Controls.Add(this.btnCategoriaProd);
-            this.SubMenuProductos.Location = new System.Drawing.Point(152, 134);
-            this.SubMenuProductos.Name = "SubMenuProductos";
-            this.SubMenuProductos.Size = new System.Drawing.Size(179, 101);
-            this.SubMenuProductos.TabIndex = 18;
-            this.SubMenuProductos.Visible = false;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel14.Location = new System.Drawing.Point(0, 68);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(5, 28);
-            this.panel14.TabIndex = 19;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel15.Location = new System.Drawing.Point(0, 34);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(5, 28);
-            this.panel15.TabIndex = 19;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(3, 68);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(176, 28);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Promociones / Combos";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(3, 34);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(176, 28);
-            this.button9.TabIndex = 18;
-            this.button9.Text = "Alta Productos";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel16.Location = new System.Drawing.Point(0, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(5, 28);
-            this.panel16.TabIndex = 17;
-            // 
-            // btnCategoriaProd
-            // 
-            this.btnCategoriaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnCategoriaProd.FlatAppearance.BorderSize = 0;
-            this.btnCategoriaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCategoriaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoriaProd.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoriaProd.ForeColor = System.Drawing.Color.White;
-            this.btnCategoriaProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategoriaProd.Location = new System.Drawing.Point(3, 0);
-            this.btnCategoriaProd.Name = "btnCategoriaProd";
-            this.btnCategoriaProd.Size = new System.Drawing.Size(176, 28);
-            this.btnCategoriaProd.TabIndex = 16;
-            this.btnCategoriaProd.Text = "Categorias";
-            this.btnCategoriaProd.UseVisualStyleBackColor = false;
-            this.btnCategoriaProd.Click += new System.EventHandler(this.button10_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,6 +606,7 @@
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.frmMenu_Shown);
@@ -615,9 +616,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.MenuVertical.ResumeLayout(false);
+            this.SubMenuProductos.ResumeLayout(false);
             this.SubmenuReportes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btninicio)).EndInit();
-            this.SubMenuProductos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -41,8 +41,16 @@ namespace AtiendelosDestktop
             List<Dictionary<string, object>> resultado = globales.consulta(login);
             if (resultado.Count <= 0) return;
 
+
+
             frmMenu menu = new frmMenu(this.id);
             menu.Show();
+
+
+            globales.menuPrincipal = menu;
+
+            this.Hide();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,7 +106,9 @@ namespace AtiendelosDestktop
                     pictureBox2_Click(null, null);
                     this.Hide();
                 }
-                catch { }
+                catch (Exception ee) {
+
+                }
             }
         }
     }

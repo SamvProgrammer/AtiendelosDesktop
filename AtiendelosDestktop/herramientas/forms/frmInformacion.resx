@@ -120,60 +120,27 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
