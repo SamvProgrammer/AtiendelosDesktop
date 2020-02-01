@@ -45,6 +45,7 @@ namespace AtiendelosDestktop.forms.reportes
 
             string bodegas = $"SELECT nombre_bodega, id_bodega FROM bodegas where id_sucursal={this.id_sucursal} and id_empresa={this.id_empresaPrincipal} ;";
             this.bodegaslista = globales.consulta(bodegas);
+            if (bodegaslista.Count <= 0) return;
             foreach(var che in bodegaslista)
             {
                 string nombre = Convert.ToString(che["nombre_bodega"]);

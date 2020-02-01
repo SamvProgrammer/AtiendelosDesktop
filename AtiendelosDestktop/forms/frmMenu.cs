@@ -157,6 +157,7 @@ namespace AtiendelosDestktop.forms
         private void button9_Click(object sender, EventArgs e)
         {
             SubMenuProductos.Visible = false;
+            AbrirFormEnPanel(new frmProductos(this.id_obtenido));
 
         }
 

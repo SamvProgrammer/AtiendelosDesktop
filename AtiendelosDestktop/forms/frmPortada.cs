@@ -12,6 +12,9 @@ namespace AtiendelosDestktop.forms
 {
     public partial class frmPortada : Form
     {
+
+        string id_empresaPrincipal;
+
         public frmPortada()
         {
             InitializeComponent();
