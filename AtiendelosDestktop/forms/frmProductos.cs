@@ -87,6 +87,7 @@ namespace AtiendelosDestktop.forms
         {
           string id = Convert.ToString(dataProductos.Rows[r].Cells[1].Value);
             rellenaProductos(id);
+            btnOk.Text = "ACTUALIZAR";
         }
 
         private void rellenaProductos (string id_obtenido)
@@ -97,13 +98,15 @@ namespace AtiendelosDestktop.forms
             string query = $"select * from productos where id_producto={id_obtenido}";
             List<Dictionary<string, object>> resultado = globales.consulta(query);
             txtNombre.Text = Convert.ToString(resultado[0]["nombre"]);
-            txtCosto.Text = Convert.ToString(resultado[0]["precio"]);
+            int cost = Convert.ToInt32(resultado[0]["precio"]);
+            txtCosto.Text = cost.ToString("C");
             string id_categoria = Convert.ToString(resultado[0]["id_categoria"]);
             string id_subcategoria = Convert.ToString(resultado[0]["subcategoria"]);
             rellenaCategs(id_categoria, id_subcategoria);
             string tipo = Convert.ToString(resultado[0]["notificacion"]);
             if (tipo == "1") rbBarra.Checked = true;
             if (tipo == "2") rbCocina.Checked = true;
+            
 
 
         }
@@ -148,10 +151,33 @@ namespace AtiendelosDestktop.forms
 
         private void ComboCateg_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hey you");
         }
 
         private void ComboCateg_Enter(object sender, EventArgs e)
+        {
+            string query = $"select * from categoria where id_empresa={this.id_empresaPrincipal}";
+            List<Dictionary<string, object>> resultado = globales.consulta(query);
+            foreach(var item in resultado)
+            {
+                string nombre = Convert.ToString(item["nombre"]);
+                string id = Convert.ToString(item["id"]);
+                ComboCateg.AddItem(nombre);
+            }
+
+        }
+
+        private void bunifuTileButton1_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            ComboCateg.Clear();
+            ComboSubcateg.Clear();
+            txtCosto.Text = "";
+            rbCocina.Checked = false;
+            rbBarra.Checked = false;
+            btnOk.Text = "INSERTAR";
+        }
+
+        private void ComboCateg_Leave(object sender, EventArgs e)
         {
             MessageBox.Show("hey you");
 

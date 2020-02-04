@@ -144,6 +144,7 @@ namespace AtiendelosDestktop.forms
                     DialogResult dialogo = globales.MessageBoxQuestion("¿DESEA AGREGAR UNA SUBCATEGORÍA?", "AVISO", globales.menuPrincipal);
                     if (dialogo==DialogResult.Yes)
                     {
+                        dataSubCateg.Rows.Clear();
                         dataSubCateg.Visible = true;
                         label3.Visible = true;
                         pictureBox1.Visible = true;
